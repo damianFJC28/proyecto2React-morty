@@ -8,11 +8,11 @@ const CharacterList = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  // Fetch de los personajes desde la API
+  
   useEffect(() => {
     fetch('https://rickandmortyapi.com/api/character')
       .then(response => response.json())
-      .then(data => setCharacters(data.results.slice(0, 20))) // Obtener los primeros 20 personajes
+      .then(data => setCharacters(data.results.slice(0, 20))) 
       .catch(error => console.error('Error fetching characters:', error));
   }, []);
 
@@ -36,7 +36,7 @@ const CharacterList = () => {
         ))}
       </ul>
 
-      {/* Modal para mostrar información del personaje */}
+      
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
